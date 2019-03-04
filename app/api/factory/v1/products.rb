@@ -9,6 +9,14 @@ module Factory
         get do
           present Product.all
         end
+
+        desc 'Return single product'
+        route_param :id do
+          get do
+            product = Product.find(params[:id])
+            present product
+          end
+        end
       end
     end
   end
