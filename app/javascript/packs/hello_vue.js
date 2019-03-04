@@ -75,6 +75,8 @@ document.addEventListener('turbolinks:load', () => {
         alert(response)
       })
     },
+    template:
+      "<ul><li v-for='product in products'> {{ product }} </li></ul>",
     components: { App }
   });
 })
