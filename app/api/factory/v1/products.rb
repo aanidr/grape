@@ -7,14 +7,15 @@ module Factory
       resource :products do
         desc 'Return list of all products'
         get do
-          present Product.all
+          products = Product.all
+          present products, with: Factory::Entities::Product
         end
 
         desc 'Return single product'
         route_param :id do
           get do
             product = Product.find(params[:id])
-            present product
+            present product, with: Factory::Entities::Product
           end
         end
       end
