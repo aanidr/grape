@@ -1,6 +1,5 @@
 module Factory
-  module V1
-    class Base < Grape::API
-    end
+  class Base < Grape::API
+    mount Factory::V1::Products
   end
 end
