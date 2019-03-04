@@ -5,7 +5,11 @@ module Factory
       format :json
 
       resource :products do
-        desc 'Return list of all products'
+        desc 'Return list of all products' do
+          summary 'This path returns all records from Product table'
+          detail 'Data also includes associated model Component'
+          named 'product index'
+        end
         get do
           products = Product.all
           present products, with: Factory::Entities::Product
